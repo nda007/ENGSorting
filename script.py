@@ -9,7 +9,7 @@ def main(fname, snum):
     main_titles = ["SId", "PolyRank", "TEA", "TEAPercent", "ATAR"]
     repeated_titles = ["Id","Type","LetterGrade","RawResult","ScaledResult", "Used"]
 
-    orig_path = "./" + fname + ".xlsx"
+    orig_path = "./" + fname
     
     assert os.path.isfile(orig_path) == True, "Error, the file name given does not exist in this folder, please check the spelling and try again"
     
@@ -40,7 +40,7 @@ def main(fname, snum):
 
         formatted_text.append(full_line)
 
-    with open("formatted.csv", "w", newline='', encoding='utf-8') as new_file:
+    with open("formattedATARPredictions.csv", "w", newline='', encoding='utf-8') as new_file:
         writer = csv.writer(new_file)
         for row in formatted_text:
             writer.writerow(row)
