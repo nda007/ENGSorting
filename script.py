@@ -23,7 +23,6 @@ def main(fname, snum):
     for i in range(1, snum):
         labelled_subjects += ["Sub" + str(i) + title for title in repeated_titles]
     full_title = [main_titles[0]] + labelled_subjects + main_titles[1:]
-    print(full_title)
     formatted_text.append(full_title)
 
     for lines in data:
@@ -38,7 +37,6 @@ def main(fname, snum):
         while len(full_line) != len(full_title)-4:
             full_line.append("")
         full_line += value[-4:]
-        print(full_line)
 
         formatted_text.append(full_line)
 
@@ -59,3 +57,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     assert args.fname != "", "Please provide a filename argument by running the following command: python script.py -fname 'your_filename'"
     main(args.fname, args.smax+1)
+
+    print("Finished Successfully")
